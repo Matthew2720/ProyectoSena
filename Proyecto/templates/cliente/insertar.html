@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "css/bootstrap.css"%}'>
+    <script src = '{% static "js/bootstrap.js"%}'></script>
+</head>
+<body>
+    <div class="container-fluid" ></div>
+    <h1 style="text-align: center;"> FORMULARIO DE REGISTRO DE CLIENTE</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+    <div class="container">
+        <div class="row">
+          <div class="col ">
+            Nombre:
+            <input  class="form-control"  type="text" name="nombre" >
+          </div>
+          <div class="col ">
+            Apellido:
+            <input  class="form-control"  type="text" name="apellido">
+          </div>
+          <div class="col ">
+            Edad:
+            <input  class="form-control"  type="text" name="edad" >
+          </div>
+          <div class="row">
+            <div class="col">
+              Celular:
+              <input  class="form-control" type="number" name="celular" id="" >
+            </div>
+            <div class="col ">
+                Fecha de Nacimiento :
+                <input  class="form-control" type="date" name="fechanacimiento" >
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="form-label">Email:</label>
+                  <input class="form-control" type="text" name="email" id="" >
+                </div>
+                <div class="col">
+                    <label class="form-label">Genero:</label>
+                    <select class="form-control" type="text" name="genero" id="" >
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Cedula:</label>
+                    <input class="form-control" type="text" name="cedula" id="" >
+                  </div>
+              </div>
+
+                  <div class="col-5">
+                   <button style="margin-top: 3%; background-color: rgb(255, 112, 80);" class="btn">GUARDAR</button> 
+                   {% if messages %}
+                   {% for mensaje in messages %}
+                   <h2 style="color:red ;">{{ mensaje }}</h2>
+                   {% endfor %}
+                   {% endif %}
+                  </div>
+                </form>
+           
+        
+
+</body>
+</html>
